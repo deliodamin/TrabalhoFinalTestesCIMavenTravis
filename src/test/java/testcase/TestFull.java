@@ -4,6 +4,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
@@ -11,14 +12,15 @@ import java.util.ArrayList;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-//import org.openqa.selenium.By;
 
 import page.BuscarSuportesPage;
+import page.LoginPage;
 import page.MenuPage;
 import page.PendenciasPage;
 import page.TreinamentosPage;
 
 import common.TestCaseCommon;
+//import org.openqa.selenium.By;
 
 public class TestFull {
 
@@ -40,46 +42,52 @@ public class TestFull {
 		if (!"".equals(verificationErrorString)) {
 			fail(verificationErrorString);
 		}
-
+	}
+	
+	@Test
+	public void testLogin() throws Exception {
+		// Login
+		LoginPage loginPage = new LoginPage();
+		assertEquals("SCRM", loginPage.getTitle());
+		loginPage.Login("delio", "ADM66@*29");
+		
 	}
 
 	@Test
-	public void buscaTreinamentoPorNome() {//throws Exception {
-		// Login
-//		LoginPage loginPage = new LoginPage();
-//		assertEquals("SCRM", loginPage.getTitle());
-//		loginPage.Login("delio", "ADM66@*29");
+	public void buscaTreinamentoPorNome() throws Exception {
 				
-		MenuPage AbreTela = new MenuPage();
-		AbreTela.AbreTelaTreinamento();
+			MenuPage AbreTela = new MenuPage();
+			AbreTela.AbreTelaTreinamento();
 		
-		TreinamentosPage NovaBusca = new TreinamentosPage(); 
-		String retorno = NovaBusca.BuscarTreinamento("Roberto");
-	    assertThat("0", is(not(retorno))); 
-		
+			TreinamentosPage NovaBusca = new TreinamentosPage(); 
+			String retorno = NovaBusca.BuscarTreinamento("Roberto");
+			assertThat("0", is(not(retorno))); 
 	}
 	
 		
 	  @Test
 	  public void expandirSuportePendente() throws Exception {
 		  
-//		// Login
-//			LoginPage loginPage = new LoginPage();
-//			assertEquals("SCRM", loginPage.getTitle());
-//			loginPage.Login("delio", "ADM66@*29");
-//					
-			PendenciasPage ExpandirSuporte = new PendenciasPage();
-			String RetornoDeClick = ExpandirSuporte.ExpandirTreinamentoPendente();
-			assertEquals("Produto", RetornoDeClick );
+		  MenuPage AbreTela = new MenuPage();
+		  AbreTela.AbreTelaPendencias();
+		  
+		  PendenciasPage ExpandirSuporte = new PendenciasPage();
+		  String RetornoDeClick = ExpandirSuporte.ExpandirTreinamentoPendente();
+		  assertEquals("Produto", RetornoDeClick );
+	  }
+	  
+	  @Test
+	  public void verificaCalendarioTreinamentos() throws Exception {
+		  
+		  MenuPage Calendario = new MenuPage();
+		  Boolean retornoCalendario = Calendario.ChamaCalendario();	 
+		  assertTrue (retornoCalendario);
+		  
 	  }
 	  
 		@Test
-		public void buscaSuportePorNomeDeUsuario() {//throws Exception {
-//			// Login
-//			LoginPage loginPage = new LoginPage();
-//			assertEquals("SCRM", loginPage.getTitle());
-//			loginPage.Login("delio", "ADM66@*29");
-//					
+		public void buscaSuportePorNomeDeUsuario() throws Exception {
+
 			MenuPage TelaMenu = new MenuPage();
 			TelaMenu.AbreTelaBuscarSuportes();
 			
@@ -87,17 +95,11 @@ public class TestFull {
 			String retorno = BuscarSuporte.BuscarTreinamentoPorNomeDelio();
 			assertThat("0", is(not(retorno))); 
 			
-		//	TelaMenu.FecharBrowser();
-//			TestCaseCommon.getDriver().quit();
 		}
 			
 		 @Test
 		  public void testVerificaElementosAoIniciar() throws Exception {
 			  
-//			    LoginPage loginPage = new LoginPage();
-//				assertEquals("SCRM", loginPage.getTitle());
-//				loginPage.Login("delio", "ADM66@*29");
-						
 				MenuPage VerificarElementos = new MenuPage();
 				VerificarElementos.setObjetos();
 
@@ -113,18 +115,30 @@ public class TestFull {
 		  @Test
 		  public void verificaAcessoMenuDisponibilidadeDeUsuario() throws Exception {
 			  
+				MenuPage AdminPage = new MenuPage();
+				AdminPage.AbreTelaConfiguracoes();
+				assertEquals("Admin", AdminPage.verificaAcessoAdmin());
+
+				System.out.println(AdminPage.verificaAcessoAdmin());
+				AdminPage.AbreTelaAdmin();
+				
+		  }
+		  
+		  @Test
+		  public void verificaAcessoMenuBotaoSair() throws Exception {
+			  
 			// Login
 //				LoginPage loginPage = new LoginPage();
 //				assertEquals("SCRM", loginPage.getTitle());
 //				loginPage.Login("delio", "ADM66@*29");
 //				
-				MenuPage AdminPage = new MenuPage();
-				AdminPage.AbreTelaConfiguracoes();
-				assertEquals("Admin", AdminPage.verificaAcessoAdmin());
-				System.out.println(AdminPage.verificaAcessoAdmin());
-				AdminPage.AbreTelaAdmin();
-				
-			//	TelaMenu.FecharBrowser();
+				MenuPage SairApp = new MenuPage();
+				SairApp.setObjetos();
+				ArrayList<String> RetornoDeObjetos = SairApp.getObjetos();
+				System.out.println(RetornoDeObjetos.get(0));
+			    assertEquals("Sair", RetornoDeObjetos.get(0));
+			    SairApp.FecharBrowser();
+				TestCaseCommon.getDriver().quit();
 		  }
 		 
 }
