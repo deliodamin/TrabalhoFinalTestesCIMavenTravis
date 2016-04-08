@@ -31,7 +31,7 @@ public class TesteSair {
 		if (!"".equals(verificationErrorString)) {
 			fail(verificationErrorString);
 		}
-		TestCaseCommon.getDriver().close();
+//		TestCaseCommon.getDriver().close();
 	}
 	
 	 @Test
