@@ -16,12 +16,7 @@ import common.TestCaseCommon;
 public class TesteSair {
 	
 	private StringBuffer verificationErrors = new StringBuffer();
-<<<<<<< HEAD
-	
-=======
 
-
->>>>>>> branch 'master' of https://github.com/deliodamin/TrabFinalTestesMaven.git
 	@Before
 	public void setUp() throws Exception {
 			TestCaseCommon.getDriver().get(TestCaseCommon.URL_BASE + "/");
@@ -36,7 +31,7 @@ public class TesteSair {
 		if (!"".equals(verificationErrorString)) {
 			fail(verificationErrorString);
 		}
-		TestCaseCommon.getDriver().quit();
+		TestCaseCommon.getDriver().close();
 	}
 	
 	 @Test
@@ -48,22 +43,7 @@ public class TesteSair {
 			System.out.println(RetornoDeObjetos.get(0));
 		    assertEquals("Sair", RetornoDeObjetos.get(0));
 		    SairApp.FecharBrowser();
-<<<<<<< HEAD
-=======
-		
->>>>>>> branch 'master' of https://github.com/deliodamin/TrabFinalTestesMaven.git
 	  }
-	 
-	 @After
-		public void tearDown() throws Exception {
-
-
-			String verificationErrorString = verificationErrors.toString();
-			if (!"".equals(verificationErrorString)) {
-				fail(verificationErrorString);
-			}
-			TestCaseCommon.getDriver().close();
-		}
-	 
+	
 	 
 }
