@@ -66,18 +66,13 @@ public class TestBFull {
 		  MenuPage Calendario = new MenuPage();
 		  Boolean retornoCalendario = Calendario.ChamaCalendario();	 
 		  assertTrue (retornoCalendario);
-		  
 	  }
 	
 	  
 	  
 		@Test
 		public void buscaSuportePorNomeDeUsuario() {//throws Exception {
-//			// Login
-//			LoginPage loginPage = new LoginPage();
-//			assertEquals("SCRM", loginPage.getTitle());
-//			loginPage.Login("delio", "ADM66@*29");
-//					
+			
 			MenuPage TelaMenu = new MenuPage();
 			TelaMenu.AbreTelaBuscarSuportes();
 			
