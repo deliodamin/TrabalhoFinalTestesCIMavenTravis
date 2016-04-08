@@ -1,5 +1,4 @@
-addons:
-  firefox: "44.0"
+
 language: java
 before_script:
 - "export DISPLAY=:99.0"
