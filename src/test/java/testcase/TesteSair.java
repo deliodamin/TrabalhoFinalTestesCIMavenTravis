@@ -9,6 +9,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import page.LoginPage;
 import page.MenuPage;
 
 import common.TestCaseCommon;
@@ -20,6 +21,7 @@ public class TesteSair {
 	@Before
 	public void setUp() throws Exception {
 			TestCaseCommon.getDriver().get(TestCaseCommon.URL_BASE + "/");
+			
 	}
 	
   	
@@ -31,12 +33,14 @@ public class TesteSair {
 		if (!"".equals(verificationErrorString)) {
 			fail(verificationErrorString);
 		}
-//		TestCaseCommon.getDriver().close();
+		TestCaseCommon.getDriver().close();
 	}
 	
 	 @Test
 	  public void verificaAcessoMenuBotaoSair() throws Exception {
-		  
+		
+		 
+		 
 			MenuPage SairApp = new MenuPage();
 			SairApp.setObjetos();
 			ArrayList<String> RetornoDeObjetos = SairApp.getObjetos();
