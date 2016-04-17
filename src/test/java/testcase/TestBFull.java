@@ -115,6 +115,20 @@ public class TestBFull {
 				
 			
 		  }
+		  
+		  @Test
+		  public void verificaAcessoMenuBotaoSair() throws Exception {
+			
+			 
+			 
+				MenuPage SairApp = new MenuPage();
+				SairApp.setObjetos();
+				ArrayList<String> RetornoDeObjetos = SairApp.getObjetos();
+				System.out.println(RetornoDeObjetos.get(0));
+			    assertEquals("Sair", RetornoDeObjetos.get(0));
+			    SairApp.FecharBrowser();
+		  }
+		  
 		  @After
 			public void tearDown() throws Exception {
 				
