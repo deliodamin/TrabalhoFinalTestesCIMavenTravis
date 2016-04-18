@@ -46,11 +46,10 @@ public class TreinamentosPage  extends HomePage{
 		this.inputFieldName = inputFieldName;
 	}
 	
-	public String BuscarTreinamento(String ConteudoPesquisa) throws Throwable  {
+	public String BuscarTreinamento(String ConteudoPesquisa) {
 	inputFieldName.clear();
 	//System.out.println(ConteudoPesquisa);
 	inputFieldName.sendKeys(ConteudoPesquisa);
-	Thread.sleep(1000);
 	buttonPesquisar.click();
 	System.out.println(	TestCaseCommon.getDriver().findElement(By.xpath("//span[@id='EmpEncontradas']/b")).getText());
 	return TestCaseCommon.getDriver().findElement(By.xpath("//span[@id='EmpEncontradas']/b")).getText();
