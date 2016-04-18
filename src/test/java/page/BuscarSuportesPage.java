@@ -21,8 +21,8 @@ public class BuscarSuportesPage {
 		
 	}
 	
-	public String BuscarTreinamentoPorNome() throws Throwable  {
-		
+	public String BuscarTreinamentoPorNome() {
+		System.out.println("EntrouBuscarTreinamento");
 		    new Select(TestCaseCommon.getDriver().findElement(By.id("usuario"))).selectByVisibleText("Daniel Link de Rosso");
 		    buttonPesquisar.click();
 		    return  ResultadoBusca.getText();
