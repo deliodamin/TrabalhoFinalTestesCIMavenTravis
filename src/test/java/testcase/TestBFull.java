@@ -113,10 +113,11 @@ public class TestBFull {
 			 
 				MenuPage SairApp = new MenuPage();
 				SairApp.setObjetos();
+				String Retorno = SairApp.getObjetoSair();
 				//ArrayList<String> RetornoDeObjetos = SairApp.getObjetos();
 				//System.out.println(RetornoDeObjetos.get(0));
 			    //assertEquals("Sair", RetornoDeObjetos.get(0));
-			    assertEquals("Sair", SairApp.getObjetoSair());
+			    assertEquals("Sair", Retorno );
 			   // SairApp.FecharBrowser();
 		  }
 //		  
