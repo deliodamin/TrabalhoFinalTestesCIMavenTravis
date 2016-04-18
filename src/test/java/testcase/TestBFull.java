@@ -35,21 +35,21 @@ public class TestBFull {
   	
 	
 
-	@Test
-	public void buscaTreinamentoPorNome() throws Throwable {//throws Exception {
-		// Login
-//		LoginPage loginPage = new LoginPage();
-//		assertEquals("SCRM", loginPage.getTitle());
-//		loginPage.Login("delio", "ADM66@*29");
-				
-		MenuPage AbreTela = new MenuPage();
-		AbreTela.AbreTelaTreinamento();
-		
-		TreinamentosPage NovaBusca = new TreinamentosPage(); 
-		String retorno = NovaBusca.BuscarTreinamento("Roberto");
-	    assertThat("0", is(not(retorno))); 
-		
-	}
+//	@Test
+//	public void buscaTreinamentoPorNome() throws Throwable {//throws Exception {
+//		// Login
+////		LoginPage loginPage = new LoginPage();
+////		assertEquals("SCRM", loginPage.getTitle());
+////		loginPage.Login("delio", "ADM66@*29");
+//				
+//		MenuPage AbreTela = new MenuPage();
+//		AbreTela.AbreTelaTreinamento();
+//		
+//		TreinamentosPage NovaBusca = new TreinamentosPage(); 
+//		String retorno = NovaBusca.BuscarTreinamento("Roberto");
+//	    assertThat("0", is(not(retorno))); 
+//		
+//	}
 	
 		
 	  @Test
