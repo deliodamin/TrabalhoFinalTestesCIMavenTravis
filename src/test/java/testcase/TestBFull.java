@@ -36,7 +36,7 @@ public class TestBFull {
 	
 
 //	@Test
-//	public void buscaTreinamentoPorNome() throws Throwable {//throws Exception {
+//	public void 	() throws Throwable {//throws Exception {
 //		// Login
 ////		LoginPage loginPage = new LoginPage();
 ////		assertEquals("SCRM", loginPage.getTitle());

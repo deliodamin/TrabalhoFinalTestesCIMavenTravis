@@ -15,7 +15,8 @@ public class BuscarSuportesPage {
 	public BuscarSuportesPage() {
 		
 	
-		buttonPesquisar = TestCaseCommon.getDriver().findElement(By.cssSelector("input.botao.submit"));
+//		buttonPesquisar = TestCaseCommon.getDriver().findElement(By.cssSelector("input.botao.submit"));
+		buttonPesquisar = TestCaseCommon.getDriver().findElement(By.xpath("(//a[@id='suporteA']/div)[3]"));
 		ResultadoBusca = TestCaseCommon.getDriver().findElement(By.cssSelector("b"));
 		
 	}

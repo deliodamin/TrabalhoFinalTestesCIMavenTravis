@@ -2,7 +2,6 @@ SeleniumIDE\verificaElementosAoIniciar.class
 page\BuscarSuportesPage.class
 page\MenuPage.class
 testcase\TestALogin.class
-testcase\TesteSair.class
 page\PendenciasPage.class
 SeleniumIDE\buscaTreinamentoPorNome.class
 page\LoginPage.class
