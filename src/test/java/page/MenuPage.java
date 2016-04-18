@@ -55,6 +55,9 @@ public class MenuPage  extends HomePage{
 		return listobject;
 	}
 	
+	public String getObjetoSair(){
+		return buttonSair.getText();
+	}
 
 	public WebElement getResultadoBusca() {
 		return ResultadoBusca;
