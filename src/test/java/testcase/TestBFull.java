@@ -36,7 +36,7 @@ public class TestBFull {
 	
 
 	@Test
-	public void buscarTreinamentoDeusuarios()  {//throws Exception {
+	public void buscarTreinamentoDeUsuarios()  {//throws Exception {
 		// Login
 //		LoginPage loginPage = new LoginPage();
 //		assertEquals("SCRM", loginPage.getTitle());
@@ -46,8 +46,9 @@ public class TestBFull {
 		AbreTela.AbreTelaTreinamento();
 		
 		TreinamentosPage NovaBusca = new TreinamentosPage(); 
-		String retorno = NovaBusca.BuscarTreinamento("Roberto");
-	    assertThat("0", is(not(retorno))); 
+		Boolean retorno = NovaBusca.BuscarTreinamento("Roberto");
+	 //   assertThat("0", is(not(retorno))); 
+	    assertTrue(retorno);
 		
 	}
 	
@@ -80,8 +81,8 @@ public class TestBFull {
 			String retorno = BuscarSuporte.BuscarTreinamentoPorNome();
 			assertThat("0", is(not(retorno))); 
 			
-			TelaMenu.FecharBrowser();
-			TestCaseCommon.getDriver().quit();
+			//TelaMenu.FecharBrowser();
+			//TestCaseCommon.getDriver().quit();
 		}
 			
 		 @Test
