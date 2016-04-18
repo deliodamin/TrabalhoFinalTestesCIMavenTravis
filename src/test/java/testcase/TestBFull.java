@@ -71,13 +71,13 @@ public class TestBFull {
 	  
 	  
 		@Test
-		public void buscaSuportePorNomeDeUsuario() {//throws Exception {
+		public void buscaSuportePorNomeDeUsuario() throws Throwable {//throws Exception {
 			
 			MenuPage TelaMenu = new MenuPage();
 			TelaMenu.AbreTelaBuscarSuportes();
 			
 			BuscarSuportesPage BuscarSuporte = new BuscarSuportesPage();
-			String retorno = BuscarSuporte.BuscarTreinamentoPorNomeDelio();
+			String retorno = BuscarSuporte.BuscarTreinamentoPorNome();
 			assertThat("0", is(not(retorno))); 
 			
 		//	TelaMenu.FecharBrowser();
