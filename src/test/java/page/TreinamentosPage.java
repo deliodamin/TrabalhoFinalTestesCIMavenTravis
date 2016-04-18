@@ -48,12 +48,9 @@ public class TreinamentosPage  extends HomePage{
 	
 	public Boolean BuscarTreinamento(String ConteudoPesquisa) {
 	inputFieldName.clear();
-	//System.out.println(ConteudoPesquisa);
 	inputFieldName.sendKeys(ConteudoPesquisa);
 	
 	buttonPesquisar.click();
-	//System.out.println(	TestCaseCommon.getDriver().findElement(By.xpath("//span[@id='EmpEncontradas']/b")).getText());
-//	return TestCaseCommon.getDriver().findElement(By.xpath("//span[@id='EmpEncontradas']/b")).getText();
 	return true;
 	}
 }

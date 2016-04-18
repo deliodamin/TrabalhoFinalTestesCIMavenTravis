@@ -37,19 +37,13 @@ public class TestBFull {
 
 	@Test
 	public void buscarTreinamentoDeUsuarios()  {//throws Exception {
-		// Login
-//		LoginPage loginPage = new LoginPage();
-//		assertEquals("SCRM", loginPage.getTitle());
-//		loginPage.Login("delio", "ADM66@*29");
 				
 		MenuPage AbreTela = new MenuPage();
 		AbreTela.AbreTelaTreinamento();
 		
 		TreinamentosPage NovaBusca = new TreinamentosPage(); 
 		Boolean retorno = NovaBusca.BuscarTreinamento("Roberto");
-	 //   assertThat("0", is(not(retorno))); 
 	    assertTrue(retorno);
-		
 	}
 	
 		
@@ -88,17 +82,12 @@ public class TestBFull {
 		 @Test
 		  public void testVerificaElementosAoIniciar() throws Exception {
 			  
-//			    LoginPage loginPage = new LoginPage();
-//				assertEquals("SCRM", loginPage.getTitle());
-//				loginPage.Login("delio", "ADM66@*29");
-						
 				MenuPage VerificarElementos = new MenuPage();
 				VerificarElementos.setObjetos();
 
 				ArrayList<String> RetornoDeObjetos = VerificarElementos.getObjetos();
-			//    System.out.println(RetornoDeObjetos.get(4));
+
 				assertEquals("Sair", RetornoDeObjetos.get(0));
-			//	assertEquals("Estatísticas", RetornoDeObjetos.get(1));
 				assertEquals("Elipse Care", RetornoDeObjetos.get(1));
 				assertEquals("Treinamentos", RetornoDeObjetos.get(2));
 				assertEquals("E-mails Treinamento", RetornoDeObjetos.get(3));
@@ -117,18 +106,18 @@ public class TestBFull {
 			
 		  }
 		  
-//		  @Test
-//		  public void verificaAcessoMenuBotaoSair() throws Exception {
-//			
-//			 
-//			 
-//				MenuPage SairApp = new MenuPage();
-//				SairApp.setObjetos();
-//				ArrayList<String> RetornoDeObjetos = SairApp.getObjetos();
-//				System.out.println(RetornoDeObjetos.get(0));
-//			    assertEquals("Sair", RetornoDeObjetos.get(0));
-//			    SairApp.FecharBrowser();
-//		  }
+		  @Test
+		  public void verificaAcessoMenuBotaoSair() throws Exception {
+			
+			 
+			 
+				MenuPage SairApp = new MenuPage();
+				SairApp.setObjetos();
+				ArrayList<String> RetornoDeObjetos = SairApp.getObjetos();
+				System.out.println(RetornoDeObjetos.get(0));
+			    assertEquals("Sair", RetornoDeObjetos.get(0));
+			   // SairApp.FecharBrowser();
+		  }
 //		  
 		  @After
 			public void tearDown() throws Exception {
