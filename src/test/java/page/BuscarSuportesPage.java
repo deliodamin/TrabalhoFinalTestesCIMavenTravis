@@ -23,7 +23,8 @@ public class BuscarSuportesPage {
 	
 	public String BuscarTreinamentoPorNome() {
 		System.out.println("EntrouBuscarTreinamento");
-		    new Select(TestCaseCommon.getDriver().findElement(By.id("usuario"))).selectByVisibleText("Daniel Link de Rosso");
+		   // new Select(TestCaseCommon.getDriver().findElement(By.id("usuario"))).selectByVisibleText("Daniel Link de Rosso");
+		    new Select(TestCaseCommon.getDriver().findElement(By.xpath("//form[@id='formBuscaSuporte']/div/fieldset/fieldset/div[3]/select"))).selectByVisibleText("Daniel Link de Rosso");
 		    buttonPesquisar.click();
 		    return  ResultadoBusca.getText();
 	}

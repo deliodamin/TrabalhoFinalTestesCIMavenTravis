@@ -70,19 +70,19 @@ public class TestBFull {
 	
 	  
 	  
-//		@Test
-//		public void buscaSuportePorNomeDeUsuario()  {//throws Exception {
-//			
-//			MenuPage TelaMenu = new MenuPage();
-//			TelaMenu.AbreTelaBuscarSuportes();
-//			
-//			BuscarSuportesPage BuscarSuporte = new BuscarSuportesPage();
-//			String retorno = BuscarSuporte.BuscarTreinamentoPorNome();
-//			assertThat("0", is(not(retorno))); 
-//			
-//		//	TelaMenu.FecharBrowser();
-////			TestCaseCommon.getDriver().quit();
-//		}
+		@Test
+		public void buscaSuportePorNomeDeUsuario()  {//throws Exception {
+			
+			MenuPage TelaMenu = new MenuPage();
+			TelaMenu.AbreTelaBuscarSuportes();
+			
+			BuscarSuportesPage BuscarSuporte = new BuscarSuportesPage();
+			String retorno = BuscarSuporte.BuscarTreinamentoPorNome();
+			assertThat("0", is(not(retorno))); 
+			
+			TelaMenu.FecharBrowser();
+			TestCaseCommon.getDriver().quit();
+		}
 			
 		 @Test
 		  public void testVerificaElementosAoIniciar() throws Exception {
