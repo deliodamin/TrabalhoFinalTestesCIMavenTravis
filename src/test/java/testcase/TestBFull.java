@@ -71,7 +71,7 @@ public class TestBFull {
 	  
 	  
 		@Test
-		public void buscaSuportePorProdutoE3()  {//throws Exception {
+		public void buscaSuporteSemFiltro()  {//throws Exception {
 			
 			MenuPage TelaMenu = new MenuPage();
 			TelaMenu.AbreTelaBuscarSuportes();
